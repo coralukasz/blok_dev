@@ -236,3 +236,17 @@ object {
 .gallery-caption {
 	display: block;
 }
+
+.navbar {
+	height: 100px;
+	background-color: rgba(227, 0, 15, 0.8);
+}
+
+.navbar-brand {
+	height: 100px;
+	padding: 5px;
+}
+
+.navbar-brand img {
+	height: 100%;
+}

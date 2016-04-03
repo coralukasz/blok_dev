@@ -236,9 +236,9 @@ object {
 .gallery-caption {
 	display: block;
 }
-
 .navbar {
 	height: 100px;
+	margin-bottom: 0;
 	background-color: rgba(227, 0, 15, 0.8);
 }
 
@@ -249,4 +249,73 @@ object {
 
 .navbar-brand img {
 	height: 100%;
+}
+
+#carousel-front-top .item {
+    height: 700px;
+}
+
+.navbar-static-top {
+    border-width: 0;
+}
+
+.navbar-nav > li > a {
+    line-height: 70px;
+    color: #fff !important;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.navbar-nav > li:hover {
+	background-color: rgb(227, 0, 15);
+}
+
+.call_to_action {
+    position: relative;
+    display: block;
+    padding: 51px 21px;
+    background-color: rgb(227, 0, 15);
+}
+
+.call_to_action .text_wrapper .call_to_action_text {
+    color: #fff;
+    letter-spacing: 1px;
+    font-size: 22px;
+    font-weight: 600;
+}
+.wpb_single_image .vc_single_image-wrapper {
+    display: inline-block;
+    max-width: 100%;
+}
+.wpb_content_element.wpb_single_image img {
+    vertical-align: middle;
+}
+.wpb_single_image img {
+    height: auto;
+    max-width: 100%;
+}
+.element_from_fade {
+    display: inline-block;
+    width: 100%;
+}
+.wpb_row, .wpb_content_element, ul.wpb_thumbnails-fluid > li, .last_toggle_el_margin, .wpb_button {
+    margin-bottom: 0 !important;
+}
+.site-content {
+	margin-top:-100px;
+}
+.navbar-default .navbar-nav > .active > a {
+	background-color: transparent;
+}
+.site-footer {
+	background-color: #f4f4f4;
+    padding: 72px 0 52px;
+}
+.widget_search {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	background-color: rgb(51, 51, 51);
 }

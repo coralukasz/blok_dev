@@ -13,9 +13,9 @@
  */
 
 get_header(); ?>
-<div class-"container">
+<div class="container">
 	<div class="row">
-		<div id="primary" class="col-lg-9 col-md-12">
+		<div id="primary" class="col-lg-12 col-md-12">
 			<main id="main" class="site-main" role="main">
 
 			<?php

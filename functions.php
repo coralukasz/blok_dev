@@ -177,3 +177,46 @@ require get_template_directory() . '/inc/jetpack.php';
  * Load admin settings file.
  */
 require get_template_directory() . '/inc/admin-settings.php';
+
+function home_carousel() {
+	$out = '<div class="container-fluid carousel-container">';
+	$out .= '<div class="row">';
+	$out .= '<div id="carousel-front-top" class="carousel slide" data-ride="carousel">';
+	$carousel_items = get_option( 'euco-baner-front-top' );
+	$out .= '<!-- Indicators -->';
+	$out .= '<ol class="carousel-indicators">';
+	$index = 0;
+	foreach ($carousel_items as $item) {
+	$out .= '<li data-target="#carousel-front-top" data-slide-to="' . $index . '" ' . ( ($index == 0) ? 'class="active"' : '' ) . '></li>';
+	$index++;
+	}
+	$out .= '</ol>';
+	$out .= '<!-- Wrapper for slides -->';
+	$out .= '<div class="carousel-inner" role="listbox">';
+	$index = 0;
+	$captions =  get_carousel_caption();
+	//var_dump($captions);
+	foreach ($carousel_items as $item) { 
+	$out .= '<div class="item '. ( ($index == 0) ? 'active' : '' ) . '" style="background-image: url('.$item->url.'); background-size: cover;">';
+	$out .= '<div class="carousel-caption">';
+	$out .= " ";
+	$out .= '</div>';
+	$out .= '</div>';
+	$index++;
+	}
+	$out .= '</div>';
+	$out .= '<!-- Controls -->';
+	$out .= '<a class="left carousel-control" href="#carousel-front-top" role="button" data-slide="prev">';
+	$out .= '<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>';
+	$out .= '<span class="sr-only">Previous</span>';
+	$out .= '</a>';
+	$out .= '<a class="right carousel-control" href="#carousel-front-top" role="button" data-slide="next">';
+	$out .= '<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>';
+	$out .= '<span class="sr-only">Next</span>';
+	$out .= '</a>';
+	$out .= '</div>';
+	$out .= '</div>';
+	$out .= '</div>';
+	return $out;
+}
+add_shortcode('hcrsl','home_carousel');

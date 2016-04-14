@@ -43,6 +43,15 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=latin,latin-ext);
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #595959;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 26px;
+}
 
 /*--------------------------------------------------------------
 # Alignments
@@ -105,7 +114,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
+	margin: 0 0 0 0;
 }
 
 .page-links {
@@ -236,6 +245,13 @@ object {
 .gallery-caption {
 	display: block;
 }
+nav {
+	position: relative;
+	transition: all 300ms linear;
+}
+#primary {
+	transition: all 300ms linear;
+}
 .navbar {
 	height: 100px;
 	margin-bottom: 0;
@@ -249,6 +265,7 @@ object {
 
 .navbar-brand img {
 	height: 100%;
+    position:absolute;
 }
 
 #carousel-front-top .item {
@@ -258,10 +275,11 @@ object {
 .navbar-static-top {
     border-width: 0;
 }
-
+.navbar-default .navbar-nav > li > a {
+    color: #fff;
+}
 .navbar-nav > li > a {
     line-height: 70px;
-    color: #fff !important;
     font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: 500;
@@ -270,12 +288,19 @@ object {
 .navbar-nav > li:hover {
 	background-color: rgb(227, 0, 15);
 }
-
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+    color: #fff;
+    background-color: rgb(227, 0, 15);
+}
+.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
+    color: #fff;
+}
 .call_to_action {
     position: relative;
     display: block;
     padding: 51px 21px;
     background-color: rgb(227, 0, 15);
+    margin-top:-50px;
 }
 
 .call_to_action .text_wrapper .call_to_action_text {
@@ -312,10 +337,400 @@ object {
 	background-color: #f4f4f4;
     padding: 72px 0 52px;
 }
-.widget_search {
-	position: absolute;
-	top: 0px;
-	left: 0px;
+.search-form {
+	background: none repeat scroll 0 0 #353535;
+    color: #fff;
+    margin: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: height 300ms linear;
+}
+.form-container {
+	position: relative;
+	padding: 0;
 	width: 100%;
-	background-color: rgb(51, 51, 51);
+	z-index: 100;
+}
+.search-form .container {
+	position: relative;
+}
+.search-form .container input {
+    width: 90%;
+    padding: 0 0 0 10px;
+    background-color: #353535;
+    border: medium none;
+    box-shadow: none;
+    color: #959595;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 20px;
+    height: 20px;
+    margin: 15px 0;
+    font-family: inherit;
+    outline: 0;
+    outline-offset: 0;
+    -webkit-appearance: none;
+    border-radius: 0;
+    float: left;
+}
+.search-form input[type="submit"] {
+    border: 0 none;
+    clip: rect(0px, 0px, 0px, 0px);
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    visibility: hidden;
+}
+.search-form i {
+    color: #959595;
+    font-size: 13px;
+    display: inline-block;
+    padding: 0;
+    float: left;
+    line-height: 50px;
+}
+.search-form .search-close {
+    color: #959595;
+    font-size: 13px;
+    position: absolute;
+    line-height: 50px;
+    height: 50px;
+    top: 0;
+    right: 15px;
+}
+.search-button {
+	float: right;
+	color: #fff;
+	line-height: 70px;
+	padding-left: 30px;
+	padding-right: 0px;
+	padding-top:15px;
+	padding-bottom: 15px;
+}
+.dark .search-button {
+    color: #000;
+}
+#srch {
+	cursor: pointer;
+}
+.title img {
+    display: block;
+    position: relative;
+    width: 100%;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+.title_outer.with_image .title {
+    height: auto !important;
+    line-height: normal;
+    background: 0;
+}
+.title {
+    display: block;
+    width: 100%;
+    height: 100px;
+    text-align: left;
+    position: relative;
+    z-index: 101;
+    border-bottom-color: #eee;
+}
+.title .title_holder {
+    display: table;
+    height: 100%;
+    left: 0;
+    position: relative;
+    width: 100%;
+}
+.title_outer.with_image .title .title_subtitle_holder, .title_outer .has_fixed_background.title .title_subtitle_holder, .title_outer .has_background.title .title_subtitle_holder {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+}
+.title_subtitle_holder {
+    display: block;
+    padding: 0;
+    position: relative;
+}
+.site-content .title_outer.with_image .title .container_inner, .title_outer .has_fixed_background.title .title_holder .container_inner, .title_outer .has_background.title .title_holder .container_inner {
+    display: table;
+    height: 100%;
+}
+.title_outer.with_image .title .title_holder .container, .title_outer .has_fixed_background.title .title_holder .container, .title_outer .has_background.title .title_holder .container {
+    display: block;
+    height: 100%;
+}
+.title .title_holder .container {
+    display: table-cell;
+    vertical-align: middle;
+    background-color: transparent;
+}
+.title_outer.with_image .title .title_subtitle_holder, .title_outer .has_fixed_background.title .title_subtitle_holder, .title_outer .has_background.title .title_subtitle_holder {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+}
+.title_outer.with_image .title .title_holder, .title_outer .has_fixed_background.title .title_holder, .title_outer .has_background.title .title_holder {
+    position: absolute;
+    top: 0;
+    display: block;
+}
+.clearfix::before, .clearfix::after {
+    content: " ";
+    display: table;
+}
+.title_outer.with_image .title .title_holder .container, .title_outer .has_fixed_background.title .title_holder .container, .title_outer .has_background.title .title_holder .container {
+    display: block;
+    height: 100%;
+}
+header {
+	width: 100%;
+	display: inline-block;
+	margin: 0;
+	vertical-align: middle;
+	position: relative;
+	z-index: 110;
+	-webkit-backface-visibility: hidden;
+}
+h2 {
+	color: #000000;
+	font-size: 25px;
+	letter-spacing: 1px;
+	text-transform: none;
+}
+h3, h3 a {
+    color: #000000;
+    letter-spacing: 1px;
+    text-transform: none;
+    font-size: 17px;
+}
+.separator.small, .wpb_column > .wpb_wrapper .separator.small {
+    height: 1px;
+    background-color: #5275b5;
+    width: 48px;
+}
+.wpb_column > .wpb_wrapper > :last-child {
+    margin-bottom: 0;
+}
+.qbutton.small {
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    padding: 0 17px;
+}
+.qbutton.small {
+    font-size: 10px;
+    font-weight: 700;
+}
+.qbutton.left {
+    text-align: left;
+}
+.qbutton, .load_more a, .blog_load_more_button a, #submit_comment, .drop_down .wide .second ul li .qbutton, .drop_down .wide .second ul li ul li .qbutton {
+    position: relative;
+    display: inline-block;
+    width: auto;
+    height: 39px;
+    line-height: 39px;
+    margin: 0;
+    padding: 0 23px;
+    border: 2px solid #303030;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: inherit;
+    text-align: left;
+    color: #303030;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+    outline: 0;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    -o-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -ms-border-radius: 4px;
+    border-radius: 4px;
+    text-shadow: none;
+    background-color: transparent;
+    -webkit-transition: color .1s linear, background-color .1s linear, border-color .1s linear;
+    -moz-transition: color .1s linear, background-color .1s linear, border-color .1s linear;
+    -ms-transition: color .1s linear, background-color .1s linear, border-color .1s linear;
+    -o-transition: color .1s linear, background-color .1s linear, border-color .1s linear;
+    transition: color .1s linear, background-color .1s linear, border-color .1s linear;
+    -webkit-box-sizing: initial !important;
+    -moz-box-sizing: initial !important;
+    box-sizing: initial !important;
+}
+.qbutton, .qbutton.medium, #submit_comment, .load_more a, .blog_load_more_button a, .post-password-form input[type="submit"], input.wpcf7-form-control.wpcf7-submit, input.wpcf7-form-control.wpcf7-submit:not([disabled]) {
+    color: #ffffff;
+    border-color: #e3000f;
+    line-height: 45px;
+    height: 45px;
+    font-style: normal;
+    font-weight: 300;
+    background-color: #e3000f;
+    border-radius: 0px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    letter-spacing: 1px;
+}
+.qbutton:hover {
+	text-decoration: none;
+}
+.call_to_action .column2.button_wrapper .qbutton {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin: -21px 0 0 0;
+}
+.qbutton.white {
+    border-color: #ffffff;
+    color: #ffffff;
+}
+.qbutton.white:hover {
+    background-color: #ffffff;
+    color: #dd1616;
+}
+.tablepress {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    margin-bottom: 1em;
+    border: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: medium none;
+    vertical-align: middle;
+}
+.tablepress tbody tr:first-child td {
+    border-top: 0;
+}
+.tablepress .odd td {
+    background-color: #f9f9f9;
+}
+.tablepress tbody td, .tablepress tfoot th {
+    border-top: 1px solid #ddd;
+}
+.tablepress tbody td {
+    vertical-align: top;
+}
+.tablepress td, .tablepress th {
+    padding: 2px 10px 2px 10px;
+    font-size: 13px;
+    border: none;
+    background: 0 0;
+    text-align: left;
+    float: none !important;
+}
+.call_to_action .text_wrapper .call_to_action_text {
+    color: #fff;
+    letter-spacing: 1px;
+    font-size: 22px;
+    font-weight: 500;
+}
+.call_to_action .button_wrapper .qbutton {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: -11px 0 0 0;
+}
+a, p a {
+    color: #303030;
+    text-decoration: none;
+    cursor: pointer;
+}
+a:hover,
+p a:hover {
+    color: #ff0000;
+    text-decoration: none;
+}
+span.submit_button_contact {
+    display: block;
+    text-align: right;
+}
+#respond textarea, #respond input[type="text"], .contact_form input[type="text"], .contact_form textarea {
+    width: 100%;
+    margin: 0 0 20px 0;
+    padding: 15px 12px;
+    border: 0;
+    outline: 0;
+    resize: none;
+    font-size: 13px;
+    line-height: 17px;
+    background-color: #fff;
+    color: #818181;
+    font-weight: 400;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+#respond textarea, #respond input[type="text"], .contact_form input[type="text"], .contact_form textarea, .comment_holder #respond textarea, .comment_holder #respond input[type="text"], input.wpcf7-form-control.wpcf7-text, input.wpcf7-form-control.wpcf7-number, input.wpcf7-form-control.wpcf7-date, textarea.wpcf7-form-control.wpcf7-textarea, select.wpcf7-form-control.wpcf7-select, input.wpcf7-form-control.wpcf7-quiz, .post-password-form input[type="password"] {
+    background-color: #F6F6F6;
+}
+.dark:not(.sticky):not(.scrolled) .navbar-collapse > ul > li > a {
+    color: #000;
+    -webkit-transition: top .3s ease-in-out;
+    -moz-transition: top .3s ease-in-out;
+    -ms-transition: top .3s ease-in-out;
+    -o-transition: top .3s ease-in-out;
+    transition: top .3s ease-in-out;
+}
+.dark:not(.sticky):not(.scrolled) .navbar-collapse > ul > li > a:hover {
+    color: #fff;
+}
+img.light {
+    opacity: 1;
+}
+img.dark {
+    opacity: 0;
+}
+.dark img.light {
+    opacity: 0;
+}
+.dark img.dark {
+    opacity: 1;
+}
+.woocommerce div.product {
+    padding-top: 30px !important;
+}
+.woocommerce div.product p.price, .woocommerce div.product span.price, .woocommerce div.product .stock {
+    color: #dd1616;
+}
+.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt {
+    background-color: #ff1616;
+}
+.woocommerce #respond input#submit.alt:hover,.woocommerce a.button.alt:hover,.woocommerce button.button.alt:hover,.woocommerce input.button.alt:hover {
+    background-color: #dd1616;
+}
+.woocommerce ul.products li.product .price {
+    color: #dd1616;
+}
+h2.widget-title {
+    font-size:20px;
+}
+.woocommerce .woocommerce-info {
+    border-top-color: #ff0000;
+}
+.woocommerce .woocommerce-info::before {
+    color: #ff0000;
+}
+.woocommerce form .form-row input.input-text, .woocommerce form .form-row textarea {
+    border: 1px #a1a1a1 solid;
+    padding: 10px;
+    font-size: 12px;
+    background-color: #f7f6f7;
+    border-radius: 5px;
+}
+.pad-top-100 {
+    padding-top: 120px;
 }

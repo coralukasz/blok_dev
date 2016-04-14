@@ -8,17 +8,12 @@
  */
 
 get_header(); ?>
-
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-
+<!-- asd -->
+	<section id="primary" class="content-area" style="padding-top:100px;">
+		<main id="main" class="site-main container" role="main">
 		<?php
 		if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'bloktherm' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-			</header><!-- .page-header -->
-
+			<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'bloktherm' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
@@ -44,5 +39,5 @@ get_header(); ?>
 	</section><!-- #primary -->
 
 <?php
-get_sidebar();
+//get_sidebar();
 get_footer();

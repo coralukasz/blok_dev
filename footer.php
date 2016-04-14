@@ -12,7 +12,20 @@
 ?>
 
 	</div><!-- #content -->
-
+	<script type="text/javascript">
+		jQuery(document).ready(function(){
+			jQuery('#srch').on('click', function(){
+				jQuery('#searchform').css('height','50px');
+				jQuery('nav').css('top','50px');
+				jQuery('#primary').css('margin-top','50px');
+			});
+			jQuery('.search-close > a').on('click', function(){
+				jQuery('#searchform').css('height','0px');
+				jQuery('nav').css('top','0px');
+				jQuery('#primary').css('margin-top','0px');
+			});
+		});
+	</script>
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'bloktherm' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'bloktherm' ), 'WordPress' ); ?></a>

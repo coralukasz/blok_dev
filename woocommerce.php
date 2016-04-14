@@ -14,25 +14,19 @@
 
 get_header(); ?>
 <!-- strona Lukasz -->
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area woocommerce" style="padding-top:120px;">
 		<main id="main" class="site-main" role="main">
-
-			<?php
-			while ( have_posts() ) : the_post();
-
-				get_template_part( 'template-parts/content', 'page' );
-
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
-
-			endwhile; // End of the loop.
-			?>
-
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-9">
+						<?php woocommerce_content(); ?>
+					</div>
+					<div class="col-sm-3">
+						<?php get_sidebar(); ?>
+					</div>
+				</div>
+			</div>
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
 <?php
-//get_sidebar();
 get_footer();

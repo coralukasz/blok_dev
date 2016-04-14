@@ -5,7 +5,7 @@
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package bloktherm
- */
+ */ 
 
 if ( ! function_exists( 'bloktherm_setup' ) ) :
 /**
@@ -117,9 +117,10 @@ function bloktherm_scripts() {
 	wp_enqueue_style('bootstrap-styles', get_template_directory_uri().'/css/bootstrap.min.css' );
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '4.5.0', 'all' );
+	wp_enqueue_style( 'flexslider', get_template_directory_uri() . '/css/flexslider.css', array(), '2.6.0', 'all' );
 	wp_enqueue_script( 'bloktherm-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '3.3.6', true );
-
+	wp_enqueue_script( 'flexslider-js', get_template_directory_uri() . '/js/jquery.flexslider-min.js', array('jquery'), '2.6.0', true );
 	wp_enqueue_script( 'bloktherm-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -142,6 +143,8 @@ if( !function_exists('ie_scripts')) {
    	}
    	add_action('wp_head', 'ie_scripts');
 } // end if
+
+remove_action('woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30);
 
 /**
 * Load bootstrap menu
@@ -183,14 +186,14 @@ function home_carousel() {
 	$out .= '<div class="row">';
 	$out .= '<div id="carousel-front-top" class="carousel slide" data-ride="carousel">';
 	$carousel_items = get_option( 'euco-baner-front-top' );
-	$out .= '<!-- Indicators -->';
-	$out .= '<ol class="carousel-indicators">';
-	$index = 0;
-	foreach ($carousel_items as $item) {
-	$out .= '<li data-target="#carousel-front-top" data-slide-to="' . $index . '" ' . ( ($index == 0) ? 'class="active"' : '' ) . '></li>';
-	$index++;
-	}
-	$out .= '</ol>';
+	// $out .= '<!-- Indicators -->';
+	// $out .= '<ol class="carousel-indicators">';
+	// $index = 0;
+	// foreach ($carousel_items as $item) {
+	// $out .= '<li data-target="#carousel-front-top" data-slide-to="' . $index . '" ' . ( ($index == 0) ? 'class="active"' : '' ) . '></li>';
+	// $index++;
+	// }
+	// $out .= '</ol>';
 	$out .= '<!-- Wrapper for slides -->';
 	$out .= '<div class="carousel-inner" role="listbox">';
 	$index = 0;
